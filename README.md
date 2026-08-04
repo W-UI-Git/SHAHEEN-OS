@@ -1,152 +1,212 @@
-# SHAHEEN OS
+# 🚀 SHAHEEN OS
 
-SHAHEEN OS is a modular classifieds marketplace built with Laravel 13 and Filament v5.
+> A modern AI-powered digital operating environment built for intelligent
+> workflows, agents, tools, workspaces, integrations, automation and
+> extensible applications.
 
-![SHAHEEN OS Screenshot](public/screenshot.jpg)
+---
 
-## Core Stack
+## 🌌 About
 
-- PHP 8.5
-- Laravel 13
-- FilamentPHP v5
-- `nwidart/laravel-modules`
-- Blade + Tailwind + Vite
-- Spatie Permission
-- Laravel Reverb + Echo (realtime chat)
+**SHAHEEN OS** is a modular digital platform designed to combine artificial
+intelligence, productivity, automation, development tools, integrations,
+workspaces and extensible services inside a unified user experience.
 
-## Modules
+Project owner:
 
-All business features live in `Modules/*` (routes, services, models, resources, views, seeders).
+**Yousef Z. A. Shaheen**
 
-Create a new module:
+Official project email:
 
-```bash
-php artisan module:make ModuleName
-```
+**yza.1994s@gmail.com**
 
-Enable it in `modules_statuses.json`.
+First publication:
 
-## Quick Start
+**04/2026**
 
-### Docker
+---
 
-```bash
-cp .env.example .env
-docker compose up -d
-```
+## ✨ Overview
 
-App URLs:
+SHAHEEN OS provides a unified environment for interacting with AI models,
+agents, tools, plugins, workspaces, applications, services and external
+platforms.
 
-- Frontend: `http://localhost:8000`
-- Admin: `http://localhost:8000/admin`
-- Panel: `http://localhost:8000/panel`
+The system is designed to support both self-hosted and cloud deployments.
 
-### Local
+---
 
-Requirements: PHP 8.2+, Composer, Node 18+, database server.
+## 🎯 Vision
 
-```bash
-composer install
-npm install
-cp .env.example .env
-php artisan key:generate
-php artisan migrate
-php artisan db:seed
-composer run dev
-```
+Build a globally accessible AI operating environment where users can:
 
-## Seeded Accounts
+- communicate with AI
+- create intelligent agents
+- manage projects
+- use development tools
+- connect external services
+- create workspaces
+- automate workflows
+- manage files
+- deploy applications
+- extend the platform with plugins
 
-| Role | Email | Password |
-|------|-------|----------|
-| Admin | `a@a.com` | `236330` |
-| Member | `b@b.com` | `36330` |
+---
 
-## Demo Mode
+## 💡 Mission
 
-Demo mode provisions a temporary, per-visitor marketplace schema.
+The mission of SHAHEEN OS is to provide a flexible, extensible and secure
+platform that combines AI capabilities with practical digital services.
 
-Requirements:
+---
 
-- `DB_CONNECTION=pgsql`
-- `DEMO=1`
+## 🔥 Highlights
 
-Minimal `.env`:
+- AI-first architecture
+- Modular components
+- Responsive interface
+- RTL/LTR support
+- Arabic-first localization
+- Multi-language architecture
+- Agent-oriented workflows
+- Plugin architecture
+- Tools architecture
+- Workspace support
+- API integration
+- Cloud deployment support
+- Self-hosting support
+- Docker support
+- Kubernetes-ready architecture
+- Production build pipeline
 
-```env
-DEMO=1
-DEMO_TTL_MINUTES=360
-DEMO_SCHEMA_PREFIX=demo_
-DEMO_COOKIE_NAME=oc2_demo
-DEMO_LOGIN_EMAIL=a@a.com
-DEMO_PUBLIC_SCHEMA=public
-```
+---
 
-Commands:
+## ⭐ Features
 
-```bash
-php artisan demo:prepare
-php artisan demo:cleanup
-```
+- AI conversations
+- AI agents
+- Model management
+- Workspace management
+- File management
+- Search
+- Tools
+- Plugins
+- Marketplace
+- Integrations
+- Notifications
+- Authentication
+- User settings
+- Administration
+- Localization
+- Responsive UI
+- Accessibility
+- Dark interface
+- Premium UI components
+- Motion system
+- Navigation system
+- Global branding system
 
-Notes:
+---
 
-- First guest homepage shows only `Prepare Demo`.
-- `Prepare Demo` creates/reuses a private schema and logs in seeded admin.
-- Expired demos are cleaned up automatically (hourly schedule).
+## 🧠 AI Capabilities
 
-## Realtime Chat (Reverb)
+SHAHEEN OS is designed to support:
 
-Set `.env`:
+- conversational AI
+- agent workflows
+- contextual AI
+- tool calling
+- document processing
+- structured generation
+- automation
+- AI-assisted development
+- multimodal workflows
+- model routing
+- provider abstraction
 
-```env
-BROADCAST_CONNECTION=reverb
-REVERB_APP_ID=app_id
-REVERB_APP_KEY=app_key
-REVERB_APP_SECRET=app_secret
-REVERB_HOST=localhost
-REVERB_PORT=8080
-REVERB_SCHEME=http
-REVERB_SERVER_HOST=0.0.0.0
-REVERB_SERVER_PORT=8080
-VITE_REVERB_APP_KEY="${REVERB_APP_KEY}"
-VITE_REVERB_HOST="${REVERB_HOST}"
-VITE_REVERB_PORT="${REVERB_PORT}"
-VITE_REVERB_SCHEME="${REVERB_SCHEME}"
-```
+---
 
-Start:
+## 🤖 Supported Models
 
-```bash
-composer run dev
-```
+The architecture is designed to support multiple AI providers and models.
 
-Channel strategy:
+Model availability depends on configured providers and environment variables.
 
-- private channel: `users.{id}.inbox`
-- events: `InboxMessageCreated`, `ConversationReadUpdated`
+Providers may include:
 
-## Test and Build
+- OpenAI-compatible APIs
+- Local models
+- Self-hosted models
+- Cloud AI providers
+- Custom inference endpoints
 
-```bash
-php artisan test
-php artisan optimize:clear
-php artisan view:cache
-```
+---
 
-## Production Checklist
+## 🔌 Integrations
 
-```bash
-php artisan migrate --force
-php artisan db:seed --force
-php artisan storage:link
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
-```
+SHAHEEN OS is designed to integrate with external services through APIs,
+connectors and provider adapters.
 
-## Contributors
+Examples include:
 
-- Website: [sooqmarket.com](https://sooqmarket.com)
-- Package: [sooqmarket/sooqmarket](https://packagist.org/packages/sooqmarket/sooqmarket)
-- Contributors: [GitHub graph](https://github.com/sooqmarket/sooqmarket/graphs/contributors)
+- Git repositories
+- Cloud services
+- Databases
+- AI providers
+- Storage providers
+- Deployment platforms
+- Automation services
+
+---
+
+## 🧩 Plugins
+
+The plugin architecture allows additional functionality to be integrated
+without modifying the core application.
+
+Plugins can provide:
+
+- new tools
+- external APIs
+- AI capabilities
+- productivity features
+- integrations
+- custom workflows
+
+---
+
+## 🛠 Tools
+
+The platform is designed around an extensible tools layer.
+
+Tools may include:
+
+- terminal operations
+- web utilities
+- file operations
+- search
+- project utilities
+- developer utilities
+- automation
+- API operations
+
+---
+
+## 🏗 Architecture
+
+SHAHEEN OS follows a modular application architecture.
+
+Core layers include:
+
+```text
+Presentation Layer
+        ↓
+Application Layer
+        ↓
+Service Layer
+        ↓
+Integration Layer
+        ↓
+Persistence Layer
+        ↓
+Infrastructure

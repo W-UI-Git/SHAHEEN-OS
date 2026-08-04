@@ -1,0 +1,44 @@
+SHAHEEN OS GIT RELEASE METADATA
+================================
+
+Project:
+SHAHEEN OS
+
+Version:
+1.0.0
+
+Timestamp:
+20260804_141955
+
+Root:
+/root/sooq-app
+
+Branch:
+master
+
+Previous Commit:
+92461209f47ab640900e192fbd5bf02e5de2f2ce
+
+Production Build:
+VERIFIED
+
+Vite Manifest:
+public/build/manifest.json
+
+Production Assets:
+3
+
+Potential Secret Patterns:
+9
+
+Missing Release Files:
+1
+
+Git Release Status:
+READY
+
+Git Log:
+/root/sooq-app/storage/logs/shaheen-os/git-release-20260804_141955.log
+
+Backup:
+/root/sooq-app/.shaheen-ui-backups/20260804_141955

@@ -1,0 +1,47 @@
+SHAHEEN OS DEPLOYMENT METADATA
+================================
+
+Project:
+SHAHEEN OS
+
+Version:
+1.0.0
+
+Timestamp:
+20260804_140318
+
+Project Root:
+/root/sooq-app
+
+Deployment Log:
+/root/sooq-app/storage/logs/shaheen-os/deploy-20260804_140318.log
+
+Snapshot:
+/root/sooq-app/.shaheen-ui-backups/20260804_140318
+
+Errors:
+0
+
+Warnings:
+1
+
+Laravel:
+Laravel Framework 13.23.0
+
+PHP:
+PHP 8.4.24 (cli) (built: Jul 30 2026 15:23:13) (NTS)
+
+Node:
+v22.23.2
+
+NPM:
+10.9.8
+
+Git Commit:
+92461209f47ab640900e192fbd5bf02e5de2f2ce
+
+Git Branch:
+master
+
+Status:
+READY FOR DEPLOYMENT
