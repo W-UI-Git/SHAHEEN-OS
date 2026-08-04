@@ -1,0 +1,23 @@
+{
+  "brand": "SOOQMARKET.AI",
+  "colors": {
+    "deep_space": "#0D1117",
+    "graphite": "#111827",
+    "electric_blue": "#2563EB",
+    "indigo": "#6366F1",
+    "cyan": "#24D6E8",
+    "magenta": "#EC4899",
+    "emerald": "#10B981",
+    "soft_white": "#F8FAFC"
+  },
+  "gradient": [
+    "#24D6E8",
+    "#2563EB",
+    "#6366F1",
+    "#EC4899"
+  ],
+  "taglines": {
+    "en": "Everything. Anywhere.",
+    "ar": "كل شيء. في مكان واحد."
+  }
+}

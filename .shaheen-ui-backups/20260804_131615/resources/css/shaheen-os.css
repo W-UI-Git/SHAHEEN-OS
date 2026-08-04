@@ -1,0 +1,793 @@
+
+/* ==========================================================================
+   SHAHEEN OS
+   Premium Global Design System
+   ========================================================================== */
+
+:root {
+
+    --shaheen-black: #050507;
+    --shaheen-black-2: #09090d;
+    --shaheen-graphite: #111217;
+    --shaheen-graphite-2: #17181e;
+
+    --shaheen-white: #ffffff;
+    --shaheen-silver: #d9d9dd;
+    --shaheen-muted: #8d8e96;
+
+    --shaheen-gold: #d8b85a;
+    --shaheen-gold-light: #f5df91;
+    --shaheen-gold-dark: #8e6d27;
+
+    --shaheen-border: rgba(255,255,255,.09);
+    --shaheen-glass: rgba(255,255,255,.045);
+
+    --shaheen-radius-sm: 10px;
+    --shaheen-radius-md: 16px;
+    --shaheen-radius-lg: 24px;
+    --shaheen-radius-xl: 32px;
+
+    --shaheen-shadow:
+        0 25px 80px rgba(0,0,0,.35);
+
+    --shaheen-transition:
+        260ms cubic-bezier(.22,.61,.36,1);
+
+    --shaheen-fast:
+        160ms cubic-bezier(.22,.61,.36,1);
+}
+
+/* ==========================================================================
+   GLOBAL
+   ========================================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(216,184,90,.07),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255,255,255,.045),
+            transparent 25%
+        ),
+        var(--shaheen-black);
+
+    color: var(--shaheen-white);
+
+    text-rendering: optimizeLegibility;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   BRAND
+   ========================================================================== */
+
+.shaheen-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    transition:
+        transform var(--shaheen-transition),
+        opacity var(--shaheen-transition);
+}
+
+.shaheen-brand:hover {
+    transform: translateY(-1px);
+    opacity: .96;
+}
+
+.shaheen-brand-logo {
+    width: auto;
+    height: 42px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 18px rgba(216,184,90,.12));
+}
+
+.shaheen-brand-name {
+    font-weight: 800;
+
+    letter-spacing: .08em;
+
+    line-height: 1;
+
+    color: #fff;
+}
+
+.shaheen-brand-name span {
+    color: var(--shaheen-gold);
+}
+
+/* ==========================================================================
+   PREMIUM NAVIGATION
+   ========================================================================== */
+
+.shaheen-nav {
+    position: relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5,5,7,.94),
+            rgba(5,5,7,.78)
+        );
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.22);
+
+    transition:
+        background var(--shaheen-transition),
+        border-color var(--shaheen-transition);
+}
+
+.shaheen-nav::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -1px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(216,184,90,.35),
+            transparent
+        );
+
+    opacity: .65;
+}
+
+/* ==========================================================================
+   GLASS CARD
+   ========================================================================== */
+
+.shaheen-glass {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        1px solid var(--shaheen-border);
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.25);
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.shaheen-button {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 46px;
+
+    padding:
+        0 20px;
+
+    border-radius:
+        999px;
+
+    border:
+        1px solid rgba(216,184,90,.45);
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8ca70,
+            #b58b35
+        );
+
+    color:
+        #080808;
+
+    font-weight:
+        800;
+
+    text-decoration:
+        none;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        0 10px 35px rgba(216,184,90,.12);
+
+    transition:
+        transform var(--shaheen-transition),
+        box-shadow var(--shaheen-transition),
+        filter var(--shaheen-transition);
+}
+
+.shaheen-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: -120%;
+
+    width: 70%;
+
+    transform: skewX(-20deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.45),
+            transparent
+        );
+
+    transition:
+        left 650ms ease;
+}
+
+.shaheen-button:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 16px 50px rgba(216,184,90,.22);
+
+    filter:
+        brightness(1.06);
+}
+
+.shaheen-button:hover::before {
+    left: 150%;
+}
+
+/* ==========================================================================
+   SECONDARY BUTTON
+   ========================================================================== */
+
+.shaheen-button-secondary {
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    color:
+        #fff;
+
+    box-shadow:
+        none;
+}
+
+.shaheen-button-secondary:hover {
+    background:
+        rgba(255,255,255,.08);
+
+    border-color:
+        rgba(216,184,90,.35);
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+.shaheen-hero {
+    position: relative;
+
+    isolation: isolate;
+
+    overflow: hidden;
+
+    min-height: 620px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(216,184,90,.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(255,255,255,.04),
+            transparent 30%
+        ),
+        var(--shaheen-black);
+}
+
+.shaheen-hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -30%;
+
+    z-index: -2;
+
+    background:
+        conic-gradient(
+            from 0deg,
+            transparent,
+            rgba(216,184,90,.06),
+            transparent,
+            rgba(255,255,255,.025),
+            transparent
+        );
+
+    animation:
+        shaheen-rotate 24s linear infinite;
+}
+
+.shaheen-hero::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,7,.98),
+            rgba(5,5,7,.78),
+            rgba(5,5,7,.42)
+        );
+}
+
+.shaheen-hero-title {
+    font-weight: 900;
+
+    font-size:
+        clamp(42px, 7vw, 96px);
+
+    line-height:
+        .92;
+
+    letter-spacing:
+        -.045em;
+
+    max-width:
+        900px;
+}
+
+.shaheen-hero-title strong {
+    background:
+        linear-gradient(
+            110deg,
+            #ffffff,
+            #d8b85a,
+            #ffffff
+        );
+
+    background-size:
+        220% auto;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+
+    animation:
+        shaheen-shimmer 8s ease-in-out infinite;
+}
+
+.shaheen-hero-description {
+    max-width:
+        680px;
+
+    margin-top:
+        24px;
+
+    color:
+        var(--shaheen-muted);
+
+    font-size:
+        clamp(16px, 2vw, 20px);
+
+    line-height:
+        1.75;
+}
+
+/* ==========================================================================
+   ORBIT
+   ========================================================================== */
+
+.shaheen-orbit {
+    position:
+        absolute;
+
+    width:
+        min(620px, 72vw);
+
+    aspect-ratio:
+        1;
+
+    right:
+        -120px;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    border:
+        1px solid rgba(216,184,90,.18);
+
+    border-radius:
+        50%;
+
+    animation:
+        shaheen-float 8s ease-in-out infinite;
+}
+
+.shaheen-orbit::before,
+.shaheen-orbit::after {
+    content: "";
+
+    position:
+        absolute;
+
+    inset:
+        12%;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius:
+        50%;
+}
+
+.shaheen-orbit::after {
+    inset:
+        28%;
+
+    border-color:
+        rgba(216,184,90,.14);
+}
+
+/* ==========================================================================
+   AUTH
+   ========================================================================== */
+
+.shaheen-auth-page {
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        24px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(216,184,90,.10),
+            transparent 35%
+        ),
+        var(--shaheen-black);
+}
+
+.shaheen-auth-card {
+    width:
+        min(100%, 480px);
+
+    padding:
+        clamp(24px, 5vw, 48px);
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    border-radius:
+        30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.42);
+
+    backdrop-filter:
+        blur(28px);
+
+    -webkit-backdrop-filter:
+        blur(28px);
+}
+
+/* ==========================================================================
+   INPUTS
+   ========================================================================== */
+
+.shaheen-input {
+    width:
+        100%;
+
+    min-height:
+        48px;
+
+    padding:
+        0 16px;
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    color:
+        #fff;
+
+    outline:
+        none;
+
+    transition:
+        border-color var(--shaheen-fast),
+        background var(--shaheen-fast),
+        box-shadow var(--shaheen-fast);
+}
+
+.shaheen-input:focus {
+    border-color:
+        rgba(216,184,90,.65);
+
+    background:
+        rgba(255,255,255,.055);
+
+    box-shadow:
+        0 0 0 4px rgba(216,184,90,.08);
+}
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+
+@keyframes shaheen-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shaheen-shimmer {
+
+    0%,
+    100% {
+        background-position:
+            0% 50%;
+    }
+
+    50% {
+        background-position:
+            100% 50%;
+    }
+}
+
+@keyframes shaheen-float {
+
+    0%,
+    100% {
+        transform:
+            translateY(-50%)
+            translateX(0);
+    }
+
+    50% {
+        transform:
+            translateY(calc(-50% - 18px))
+            translateX(-8px);
+    }
+}
+
+@keyframes shaheen-fade-up {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+.shaheen-animate {
+    animation:
+        shaheen-fade-up
+        700ms
+        cubic-bezier(.22,.61,.36,1)
+        both;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+}
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+
+    .shaheen-hero {
+        min-height:
+            560px;
+    }
+
+    .shaheen-orbit {
+        right:
+            -220px;
+
+        opacity:
+            .55;
+    }
+}
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .shaheen-hero {
+        min-height:
+            auto;
+
+        padding-top:
+            100px;
+
+        padding-bottom:
+            90px;
+    }
+
+    .shaheen-hero::after {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(5,5,7,.92),
+                rgba(5,5,7,.72)
+            );
+    }
+
+    .shaheen-orbit {
+        width:
+            520px;
+
+        right:
+            -260px;
+
+        top:
+            35%;
+
+        opacity:
+            .28;
+    }
+
+    .shaheen-brand-logo {
+        height:
+            36px;
+    }
+
+    .shaheen-brand-name {
+        font-size:
+            14px;
+    }
+
+    .shaheen-button {
+        width:
+            100%;
+    }
+}
+
+/* ==========================================================================
+   SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width: 480px) {
+
+    .shaheen-auth-page {
+        padding:
+            14px;
+    }
+
+    .shaheen-auth-card {
+        padding:
+            22px 18px;
+
+        border-radius:
+            24px;
+    }
+
+    .shaheen-hero-title {
+        font-size:
+            clamp(38px, 12vw, 58px);
+    }
+
+}
+

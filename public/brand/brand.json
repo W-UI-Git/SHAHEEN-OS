@@ -1,0 +1,20 @@
+{
+    "name": "SHAHEEN OS",
+    "short_name": "SHAHEEN",
+    "brand": "SHAHEEN OS",
+    "version": "1.0.0",
+    "theme": {
+        "primary": "#D8B85A",
+        "background": "#050507",
+        "surface": "#111217",
+        "text": "#FFFFFF",
+        "muted": "#8D8E96"
+    },
+    "design": {
+        "style": "premium futuristic",
+        "responsive": true,
+        "motion": true,
+        "rtl": true,
+        "dark": true
+    }
+}

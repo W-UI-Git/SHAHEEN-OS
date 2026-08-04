@@ -12,8 +12,8 @@ services:
       DB_CONNECTION: mysql
       DB_HOST: db
       DB_PORT: 3306
-      DB_DATABASE: openclassify
-      DB_USERNAME: openclassify
+      DB_DATABASE: sooqmarket
+      DB_USERNAME: sooqmarket
       DB_PASSWORD: secret
       REDIS_HOST: redis
       CACHE_STORE: redis
@@ -32,8 +32,8 @@ services:
   db:
     image: mysql:8.0
     environment:
-      MYSQL_DATABASE: openclassify
-      MYSQL_USER: openclassify
+      MYSQL_DATABASE: sooqmarket
+      MYSQL_USER: sooqmarket
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: rootsecret
     ports:

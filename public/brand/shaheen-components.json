@@ -1,0 +1,23 @@
+{
+    "brand": "SHAHEEN OS",
+    "version": "1.0.0",
+    "system": "global-components",
+    "components": [
+        "section",
+        "container",
+        "card",
+        "grid",
+        "icon-box",
+        "badge",
+        "button",
+        "divider",
+        "status",
+        "brand-marker",
+        "empty-state"
+    ],
+    "responsive": true,
+    "rtl": true,
+    "ltr": true,
+    "reduced_motion": true,
+    "accessibility": true
+}

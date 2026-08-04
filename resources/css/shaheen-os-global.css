@@ -1,0 +1,116 @@
+/*
+|--------------------------------------------------------------------------
+| SHAHEEN OS — Global UI Layer
+|--------------------------------------------------------------------------
+| Global integration layer for the SHAHEEN OS design system.
+*/
+
+:root {
+    --shaheen-os-brand: #ffffff;
+    --shaheen-os-bg: #050505;
+    --shaheen-os-surface: #0b0b0d;
+    --shaheen-os-border: rgba(255, 255, 255, 0.10);
+    --shaheen-os-muted: rgba(255, 255, 255, 0.62);
+    --shaheen-os-radius: 18px;
+    --shaheen-os-transition: 260ms cubic-bezier(.22, 1, .36, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--shaheen-os-bg);
+    color: var(--shaheen-os-brand);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg,
+video {
+    max-width: 100%;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+    transition:
+        transform var(--shaheen-os-transition),
+        opacity var(--shaheen-os-transition),
+        background-color var(--shaheen-os-transition),
+        border-color var(--shaheen-os-transition),
+        box-shadow var(--shaheen-os-transition);
+}
+
+a {
+    color: inherit;
+}
+
+.shaheen-os-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: .65rem;
+}
+
+.shaheen-os-surface {
+    background: var(--shaheen-os-surface);
+    border: 1px solid var(--shaheen-os-border);
+    border-radius: var(--shaheen-os-radius);
+}
+
+.shaheen-os-glass {
+    background: rgba(10, 10, 12, .72);
+    border: 1px solid var(--shaheen-os-border);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.shaheen-os-hover {
+    transition: transform var(--shaheen-os-transition),
+                box-shadow var(--shaheen-os-transition),
+                border-color var(--shaheen-os-transition);
+}
+
+.shaheen-os-hover:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, .20);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, .30);
+}
+
+::selection {
+    background: rgba(255, 255, 255, .18);
+    color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --shaheen-os-radius: 14px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}

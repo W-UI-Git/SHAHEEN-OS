@@ -1,0 +1,308 @@
+/*
+|--------------------------------------------------------------------------
+| SHAHEEN OS — Global Brand UI
+|--------------------------------------------------------------------------
+| Global visual layer.
+| Does not depend on a specific frontend framework.
+|--------------------------------------------------------------------------
+*/
+
+:root {
+    --shaheen-black: #050507;
+    --shaheen-black-soft: #0a0b0f;
+    --shaheen-surface: #101116;
+    --shaheen-surface-2: #17191f;
+
+    --shaheen-white: #ffffff;
+    --shaheen-silver: #c8ccd4;
+    --shaheen-muted: #8b909b;
+
+    --shaheen-gold: #e5c158;
+    --shaheen-gold-light: #f4d982;
+    --shaheen-gold-dark: #9f8130;
+
+    --shaheen-border: rgba(255,255,255,.09);
+    --shaheen-border-gold: rgba(229,193,88,.28);
+
+    --shaheen-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+
+    --shaheen-radius-sm: 10px;
+    --shaheen-radius-md: 16px;
+    --shaheen-radius-lg: 24px;
+    --shaheen-radius-xl: 32px;
+
+    --shaheen-transition:
+        240ms cubic-bezier(.22,1,.36,1);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Base
+|--------------------------------------------------------------------------
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(229,193,88,.055),
+            transparent 35%
+        ),
+        var(--shaheen-black);
+    color: var(--shaheen-white);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+::selection {
+    background: rgba(229,193,88,.25);
+    color: #fff;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Global surfaces
+|--------------------------------------------------------------------------
+*/
+
+.shaheen-surface {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.015)
+        );
+    border: 1px solid var(--shaheen-border);
+    box-shadow: var(--shaheen-shadow);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.shaheen-glass {
+    background: rgba(10,11,15,.72);
+    border: 1px solid var(--shaheen-border);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Buttons
+|--------------------------------------------------------------------------
+*/
+
+.shaheen-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+    min-height: 44px;
+    padding: .7rem 1.15rem;
+    border-radius: 999px;
+    border: 1px solid var(--shaheen-border-gold);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(229,193,88,.18),
+            rgba(229,193,88,.04)
+        );
+    color: var(--shaheen-white);
+    transition: transform var(--shaheen-transition),
+                border-color var(--shaheen-transition),
+                background var(--shaheen-transition),
+                box-shadow var(--shaheen-transition);
+}
+
+.shaheen-button:hover {
+    transform: translateY(-2px);
+    border-color: rgba(229,193,88,.65);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(229,193,88,.28),
+            rgba(229,193,88,.08)
+        );
+    box-shadow:
+        0 10px 30px rgba(229,193,88,.10);
+}
+
+.shaheen-button:active {
+    transform: translateY(0) scale(.98);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Cards
+|--------------------------------------------------------------------------
+*/
+
+.shaheen-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--shaheen-radius-lg);
+    border: 1px solid var(--shaheen-border);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.012)
+        );
+    transition:
+        transform var(--shaheen-transition),
+        border-color var(--shaheen-transition),
+        box-shadow var(--shaheen-transition);
+}
+
+.shaheen-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(229,193,88,.10),
+            transparent 35%
+        );
+    opacity: .65;
+}
+
+.shaheen-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--shaheen-border-gold);
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.30);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Brand typography
+|--------------------------------------------------------------------------
+*/
+
+.shaheen-brand {
+    font-weight: 800;
+    letter-spacing: .08em;
+    color: var(--shaheen-white);
+}
+
+.shaheen-brand-accent {
+    color: var(--shaheen-gold);
+}
+
+.shaheen-eyebrow {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--shaheen-gold);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Images
+|--------------------------------------------------------------------------
+*/
+
+.shaheen-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition:
+        transform 700ms cubic-bezier(.22,1,.36,1),
+        filter 500ms ease;
+}
+
+.shaheen-image:hover {
+    transform: scale(1.035);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Focus
+|--------------------------------------------------------------------------
+*/
+
+:focus-visible {
+    outline: 2px solid var(--shaheen-gold);
+    outline-offset: 3px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Mobile
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 768px) {
+    :root {
+        --shaheen-radius-lg: 20px;
+        --shaheen-radius-xl: 24px;
+    }
+
+    .shaheen-card:hover {
+        transform: none;
+    }
+
+    .shaheen-button:hover {
+        transform: none;
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Reduced Motion
+|--------------------------------------------------------------------------
+*/
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| SHAHEEN OS Reveal System
+|--------------------------------------------------------------------------
+*/
+
+[data-shaheen-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+        opacity 700ms cubic-bezier(.22,1,.36,1),
+        transform 700ms cubic-bezier(.22,1,.36,1);
+}
+
+[data-shaheen-reveal].shaheen-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.shaheen-os-ready {
+    --shaheen-ui-ready: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-shaheen-reveal] {
+        opacity: 1;
+        transform: none;
+    }
+}

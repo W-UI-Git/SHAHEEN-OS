@@ -1,0 +1,547 @@
+/*
+|--------------------------------------------------------------------------
+| SHAHEEN OS — Premium Responsive Shell
+|--------------------------------------------------------------------------
+*/
+
+:root {
+    --shaheen-shell-max-width: 1440px;
+    --shaheen-shell-padding: clamp(1rem, 3vw, 3rem);
+
+    --shaheen-header-height: 76px;
+
+    --shaheen-bg: #050505;
+    --shaheen-bg-soft: #09090b;
+    --shaheen-surface: rgba(16, 16, 19, 0.82);
+    --shaheen-surface-solid: #101013;
+
+    --shaheen-border: rgba(255, 255, 255, 0.09);
+    --shaheen-border-hover: rgba(255, 255, 255, 0.18);
+
+    --shaheen-text: #ffffff;
+    --shaheen-text-soft: rgba(255, 255, 255, 0.68);
+    --shaheen-text-muted: rgba(255, 255, 255, 0.45);
+
+    --shaheen-radius-sm: 10px;
+    --shaheen-radius-md: 16px;
+    --shaheen-radius-lg: 24px;
+    --shaheen-radius-xl: 32px;
+
+    --shaheen-shadow:
+        0 24px 80px rgba(0, 0, 0, 0.32);
+
+    --shaheen-ease:
+        cubic-bezier(.22, 1, .36, 1);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Base                                                                       */
+/* -------------------------------------------------------------------------- */
+
+.shaheen-shell {
+    width: 100%;
+    min-height: 100%;
+    background: var(--shaheen-bg);
+    color: var(--shaheen-text);
+}
+
+.shaheen-shell *,
+.shaheen-shell *::before,
+.shaheen-shell *::after {
+    box-sizing: border-box;
+}
+
+.shaheen-shell-container {
+    width: min(
+        100% - (var(--shaheen-shell-padding) * 2),
+        var(--shaheen-shell-max-width)
+    );
+
+    margin-inline: auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Header                                                                     */
+/* -------------------------------------------------------------------------- */
+
+.shaheen-shell-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+    min-height: var(--shaheen-header-height);
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(5, 5, 5, .94),
+            rgba(5, 5, 5, .72)
+        );
+
+    border-bottom: 1px solid var(--shaheen-border);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    transition:
+        background-color .35s var(--shaheen-ease),
+        border-color .35s var(--shaheen-ease),
+        box-shadow .35s var(--shaheen-ease);
+}
+
+.shaheen-shell-header.is-scrolled {
+    background: rgba(5, 5, 5, .96);
+    border-bottom-color: rgba(255, 255, 255, .14);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .22);
+}
+
+.shaheen-shell-header-inner {
+    min-height: var(--shaheen-header-height);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Brand                                                                      */
+/* -------------------------------------------------------------------------- */
+
+.shaheen-shell-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+
+    color: var(--shaheen-text);
+    text-decoration: none;
+
+    font-weight: 700;
+    letter-spacing: -.025em;
+
+    white-space: nowrap;
+}
+
+.shaheen-shell-brand-symbol {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--shaheen-border);
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .12),
+            rgba(255, 255, 255, .025)
+        );
+
+    overflow: hidden;
+}
+
+.shaheen-shell-brand-symbol img,
+.shaheen-shell-brand-symbol svg {
+    width: 72%;
+    height: 72%;
+    object-fit: contain;
+}
+
+.shaheen-shell-brand-name {
+    font-size: .95rem;
+    line-height: 1;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Navigation                                                                 */
+/* -------------------------------------------------------------------------- */
+
+.shaheen-shell-nav {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+}
+
+.shaheen-shell-nav-link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+    padding: 0 .9rem;
+
+    color: var(--shaheen-text-soft);
+    text-decoration: none;
+
+    border-radius: 12px;
+
+    font-size: .9rem;
+    font-weight: 500;
+
+    transition:
+        color .25s var(--shaheen-ease),
+        background-color .25s var(--shaheen-ease),
+        transform .25s var(--shaheen-ease);
+}
+
+.shaheen-shell-nav-link:hover {
+    color: var(--shaheen-text);
+    background: rgba(255, 255, 255, .06);
+    transform: translateY(-1px);
+}
+
+.shaheen-shell-nav-link[aria-current="page"] {
+    color: var(--shaheen-text);
+    background: rgba(255, 255, 255, .08);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Actions                                                                    */
+/* -------------------------------------------------------------------------- */
+
+.shaheen-shell-actions {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+}
+
+.shaheen-shell-button {
+    min-height: 42px;
+    padding: 0 1rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+
+    border: 1px solid var(--shaheen-border);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, .045);
+    color: var(--shaheen-text);
+
+    text-decoration: none;
+    cursor: pointer;
+
+    font-size: .88rem;
+    font-weight: 600;
+
+    transition:
+        transform .25s var(--shaheen-ease),
+        background-color .25s var(--shaheen-ease),
+        border-color .25s var(--shaheen-ease),
+        box-shadow .25s var(--shaheen-ease);
+}
+
+.shaheen-shell-button:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, .08);
+    border-color: var(--shaheen-border-hover);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .22);
+}
+
+.shaheen-shell-button-primary {
+    background: #ffffff;
+    color: #050505;
+    border-color: #ffffff;
+}
+
+.shaheen-shell-button-primary:hover {
+    background: #eeeeee;
+    color: #000000;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Mobile menu                                                                */
+/* -------------------------------------------------------------------------- */
+
+.shaheen-shell-menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--shaheen-border);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, .045);
+    color: #ffffff;
+
+    cursor: pointer;
+}
+
+.shaheen-shell-mobile {
+    display: none;
+}
+
+.shaheen-shell-mobile.is-open {
+    display: block;
+}
+
+.shaheen-shell-mobile-inner {
+    padding: 1rem 0 1.25rem;
+
+    display: grid;
+    gap: .35rem;
+
+    border-top: 1px solid var(--shaheen-border);
+}
+
+.shaheen-shell-mobile-link {
+    display: flex;
+    align-items: center;
+
+    min-height: 48px;
+    padding: 0 1rem;
+
+    color: var(--shaheen-text-soft);
+    text-decoration: none;
+
+    border-radius: 12px;
+}
+
+.shaheen-shell-mobile-link:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, .06);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Main                                                                       */
+/* -------------------------------------------------------------------------- */
+
+.shaheen-shell-main {
+    position: relative;
+    min-height: calc(100vh - var(--shaheen-header-height));
+
+    isolation: isolate;
+}
+
+.shaheen-shell-main::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(255, 255, 255, .065),
+            transparent 34%
+        );
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sections                                                                   */
+/* -------------------------------------------------------------------------- */
+
+.shaheen-shell-section {
+    width: min(
+        100% - (var(--shaheen-shell-padding) * 2),
+        var(--shaheen-shell-max-width)
+    );
+
+    margin-inline: auto;
+    padding-block: clamp(3rem, 7vw, 8rem);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Cards                                                                      */
+/* -------------------------------------------------------------------------- */
+
+.shaheen-shell-card {
+    position: relative;
+
+    padding: clamp(1.1rem, 2vw, 1.75rem);
+
+    background: var(--shaheen-surface);
+    border: 1px solid var(--shaheen-border);
+    border-radius: var(--shaheen-radius-lg);
+
+    box-shadow: var(--shaheen-shadow);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    transition:
+        transform .35s var(--shaheen-ease),
+        border-color .35s var(--shaheen-ease),
+        box-shadow .35s var(--shaheen-ease);
+}
+
+.shaheen-shell-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--shaheen-border-hover);
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, .38);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Footer                                                                     */
+/* -------------------------------------------------------------------------- */
+
+.shaheen-shell-footer {
+    border-top: 1px solid var(--shaheen-border);
+    background: #050505;
+}
+
+.shaheen-shell-footer-inner {
+    width: min(
+        100% - (var(--shaheen-shell-padding) * 2),
+        var(--shaheen-shell-max-width)
+    );
+
+    margin-inline: auto;
+
+    padding-block: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    color: var(--shaheen-text-muted);
+    font-size: .82rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Focus                                                                     */
+/* -------------------------------------------------------------------------- */
+
+.shaheen-shell a:focus-visible,
+.shaheen-shell button:focus-visible,
+.shaheen-shell input:focus-visible,
+.shaheen-shell textarea:focus-visible,
+.shaheen-shell select:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* RTL                                                                        */
+/* -------------------------------------------------------------------------- */
+
+[dir="rtl"] .shaheen-shell-nav,
+[dir="rtl"] .shaheen-shell-actions,
+[dir="rtl"] .shaheen-shell-header-inner {
+    direction: rtl;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Tablet                                                                     */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    :root {
+        --shaheen-header-height: 70px;
+    }
+
+    .shaheen-shell-nav {
+        display: none;
+    }
+
+    .shaheen-shell-menu-toggle {
+        display: inline-flex;
+    }
+
+    .shaheen-shell-actions .shaheen-shell-button:not(
+        .shaheen-shell-button-primary
+    ) {
+        display: none;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Mobile                                                                     */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+    :root {
+        --shaheen-shell-padding: 1rem;
+        --shaheen-header-height: 64px;
+    }
+
+    .shaheen-shell-brand-symbol {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+    }
+
+    .shaheen-shell-brand-name {
+        font-size: .86rem;
+    }
+
+    .shaheen-shell-actions {
+        gap: .35rem;
+    }
+
+    .shaheen-shell-button {
+        min-height: 40px;
+        padding-inline: .8rem;
+    }
+
+    .shaheen-shell-section {
+        padding-block: 3rem;
+    }
+
+    .shaheen-shell-card {
+        border-radius: var(--shaheen-radius-md);
+    }
+
+    .shaheen-shell-footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Small phones                                                              */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 380px) {
+    .shaheen-shell-brand-name {
+        display: none;
+    }
+
+    .shaheen-shell-button-primary {
+        padding-inline: .7rem;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Safe area                                                                 */
+/* -------------------------------------------------------------------------- */
+
+@supports (padding: env(safe-area-inset-bottom)) {
+    .shaheen-shell-footer {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .shaheen-shell-header {
+        padding-top: env(safe-area-inset-top);
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Reduced motion                                                            */
+/* -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .shaheen-shell *,
+    .shaheen-shell *::before,
+    .shaheen-shell *::after {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}

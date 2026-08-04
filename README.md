@@ -1,8 +1,8 @@
-# OpenClassify
+# SHAHEEN OS
 
-OpenClassify is a modular classifieds marketplace built with Laravel 13 and Filament v5.
+SHAHEEN OS is a modular classifieds marketplace built with Laravel 13 and Filament v5.
 
-![OpenClassify Screenshot](public/screenshot.jpg)
+![SHAHEEN OS Screenshot](public/screenshot.jpg)
 
 ## Core Stack
 
@@ -147,6 +147,6 @@ php artisan view:cache
 
 ## Contributors
 
-- Website: [openclassify.com](https://openclassify.com)
-- Package: [openclassify/openclassify](https://packagist.org/packages/openclassify/openclassify)
-- Contributors: [GitHub graph](https://github.com/openclassify/openclassify/graphs/contributors)
+- Website: [sooqmarket.com](https://sooqmarket.com)
+- Package: [sooqmarket/sooqmarket](https://packagist.org/packages/sooqmarket/sooqmarket)
+- Contributors: [GitHub graph](https://github.com/sooqmarket/sooqmarket/graphs/contributors)
